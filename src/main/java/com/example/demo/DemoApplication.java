@@ -20,7 +20,7 @@ public class DemoApplication {
 		@RequestMapping(value = "/hello")
 		public String hello(@RequestParam(value = "name", defaultValue = "World")  String name){
 			System.out.println("222");
-			return "Hello, " + name;
+			return "Hello2, " + name;
 		}
 	
 	}
