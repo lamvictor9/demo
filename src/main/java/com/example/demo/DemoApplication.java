@@ -20,10 +20,10 @@ public class DemoApplication {
 	public static class Hello {
 
 		@RequestMapping(value = "/hello")
-		@CrossOrigin("http://localhost:8080")
+		@CrossOrigin("http://localhost:*")
 		public String hello(@RequestParam(value = "name", defaultValue = "World")  String name){
 			System.out.println("222");
-			return "Hello9, " + name;
+			return "Hello10, " + name;
 		}
 
 		
