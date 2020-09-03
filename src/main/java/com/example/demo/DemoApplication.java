@@ -16,13 +16,14 @@ public class DemoApplication {
 	}
 	
 	@RestController
-	@CrossOrigin(value="http://localhost:8080/")
+	//@CrossOrigin(value="http://localhost:8080/")
 	public static class Hello {
 
 		@RequestMapping(value = "/hello")
+		@CrossOrigin("http://localhost:8080/")
 		public String hello(@RequestParam(value = "name", defaultValue = "World")  String name){
 			System.out.println("222");
-			return "Hello7, " + name;
+			return "Hello8, " + name;
 		}
 
 		
