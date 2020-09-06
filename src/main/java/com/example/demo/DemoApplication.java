@@ -29,8 +29,11 @@ public class DemoApplication {
 		
 		@RequestMapping(value = "/hello3")
 		public String hello3(@RequestParam(value = "name", defaultValue = "World")  String name){
-			System.out.println("333");
-			return "Hello3, " + name;
+			
+			String resp = HttpClientUtils.get("http://quotese.etnet.com.hk/content/mq3/wl_hkStockCollapse.php?code=981", null);
+			
+			System.out.println(resp);
+			return "Hello3, " + resp;
 		}
 		
 	}
