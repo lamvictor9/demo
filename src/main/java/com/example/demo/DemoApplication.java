@@ -27,10 +27,19 @@ public class DemoApplication {
 		}
 
 		
-		@RequestMapping(value = "/hello3")
-		public String hello3(@RequestParam(value = "name", defaultValue = "World")  String name){
+		@RequestMapping(value = "/hello7")
+		@CrossOrigin
+		public String hello7(@RequestParam(value = "name", defaultValue = "World")  String name){
 			
-			String resp = HttpClientUtils.get("http://quotese.etnet.com.hk/content/mq3/wl_hkStockCollapse.php?code=981", null);
+			//String resp = HttpClientUtils.get("http://quotese.etnet.com.hk/content/mq3/wl_hkStockCollapse.php?code=981", null);
+			
+			String token = "%C2%BDQC%C2%A6E%C2%A7JX%3E%C3%B1%C3%9A%C2%9D-j%C2%99l%C2%9E%06%C2%93%C2%8F%C2%A6%C3%B5%C3%85%C3%89";
+			String limit = "60";
+			String minType = "102";
+			String code = "6060";
+			
+			String resp = HttpClientUtils.get("http://chartse.etnet.com.hk/HttpServer/TransServer/servlet/SecServlet?minType="+minType+"&code="+code+"&uid=BMPuser&token="+token+"&limit="+limit+"&dataType=hist_today", null);
+			
 			
 			System.out.println(resp);
 			return "Hello3, " + resp;
